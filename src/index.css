@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background: #ffffff;
+    color: #101218;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+  h1 { letter-spacing: -0.025em; }
+  :focus-visible {
+    outline: 3px solid #1B5FB3;
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+  ::selection {
+    background: #B30000;
+    color: #fff;
+  }
+  /* Scrollbar más sobrio */
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { background: #FBF8F4; }
+  ::-webkit-scrollbar-thumb { background: #D6D1CA; border: 3px solid #FBF8F4; border-radius: 8px; }
+  ::-webkit-scrollbar-thumb:hover { background: #B6B0A8; }
+}
+
+@layer components {
+  /* === Botones === */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-univalle-red px-5 py-2.5 text-white font-semibold transition shadow-pop hover:bg-univalle-red-dark active:translate-y-px focus-visible:outline-offset-2 disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-univalle-line-strong bg-white px-4 py-2 text-univalle-ink font-medium transition hover:bg-univalle-surface hover:border-univalle-ink/30 active:translate-y-px;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-univalle-ink-soft font-medium transition hover:bg-univalle-surface hover:text-univalle-ink;
+  }
+  .btn-link {
+    @apply text-univalle-red-deep font-semibold underline-offset-4 hover:underline;
+  }
+
+  /* === Badges === */
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide;
+  }
+  .badge-success { @apply badge bg-state-success-bg text-state-success-text; }
+  .badge-warn    { @apply badge bg-state-warn-bg    text-state-warn-text; }
+  .badge-danger  { @apply badge bg-state-danger-bg  text-state-danger-text; }
+  .badge-info    { @apply badge bg-state-info-bg   text-state-info-text; }
+  .badge-neutral { @apply badge bg-univalle-surface text-univalle-ink-soft; }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-univalle-surface text-univalle-ink-soft px-3 py-1 text-xs font-semibold border border-univalle-line;
+  }
+
+  /* === Cards === */
+  .card {
+    @apply bg-white rounded-2xl border border-univalle-line shadow-card transition;
+  }
+  .card-hover {
+    @apply hover:shadow-card-hover hover:-translate-y-0.5 hover:border-univalle-line-strong;
+  }
+
+  /* === Layout utilitarios === */
+  .container-page {
+    @apply max-w-7xl mx-auto px-6;
+  }
+
+  /* === Etiquetas pequeñas (eyebrow) === */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-univalle-red-deep;
+  }
+
+  /* === Accesibilidad === */
+  .skip-link {
+    @apply absolute left-3 top-3 -translate-y-24 focus:translate-y-0 bg-white text-univalle-red-deep font-semibold px-4 py-2 rounded-full shadow-card z-50 transition;
+  }
+
+  /* === Decoración: dot pattern === */
+  .dots {
+    background-image: radial-gradient(rgba(15,17,21,0.18) 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty  { text-wrap: pretty; }
+  .gradient-mask-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
+            mask-image: linear-gradient(to bottom, #000 70%, transparent);
+  }
+}
