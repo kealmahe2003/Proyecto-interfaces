@@ -6,6 +6,7 @@
 - Kevin Alexander Marín
 - Carlos Fernando Padilla
 
+---
 
 Prototipo **estático y funcional** (sin base de datos) del rediseño del Campus
 Virtual de la Universidad del Valle, construido para la asignatura
@@ -19,6 +20,10 @@ documentadas en los tres informes del equipo:
 3. **Dashboard / Área Personal** (`/dashboard`)
 4. **Mis Materias** (`/mis-materias`)
 5. **Perfil / Mi progreso** (`/perfil`)
+
+Para ingresar a cada pantalla, debe colocar la ruta en la url.
+
+---
 
 ## Stack
 
